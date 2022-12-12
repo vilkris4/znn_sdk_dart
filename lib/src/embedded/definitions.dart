@@ -51,6 +51,25 @@ class Definitions {
 		{"type":"function","name":"VoteByProdAddress","inputs":[{"name":"id","type":"hash"},{"name":"vote","type":"uint8"}]}
   ]''';
 
+  static final String _sporkDefinition = '''[
+    {"type":"function","name":"CreateSpork","inputs":[{"name":"name","type":"string"},{"name":"description","type":"string"}]},
+		{"type":"function","name":"ActivateSpork","inputs":[{"name":"id","type":"hash"}]}
+  ]''';
+
+  static final String _htlcDefinition = '''[
+    {"type":"function","name":"CreateHtlc", "inputs":[
+			{"name":"hashLocked","type":"address"},
+			{"name":"expirationTime","type":"int64"},
+			{"name":"hashType","type":"uint8"},
+			{"name":"keyMaxSize","type":"uint8"},
+			{"name":"hashLock","type":"bytes"}]},
+		{"type":"function","name":"ReclaimHtlc","inputs":[
+			{"name":"id","type":"hash"}]},
+		{"type":"function","name":"UnlockHtlc","inputs":[
+			{"name":"id","type":"hash"},
+			{"name":"preimage","type":"bytes"}]}
+  ]''';
+
   // Common definitions of embedded methods
   static final String _commonDefinition = '''[
     {"type":"function","name":"DepositQsr","inputs":[]},
@@ -66,5 +85,7 @@ class Definitions {
   static final Abi swap = Abi.fromJson(_swapDefinition);
   static final Abi stake = Abi.fromJson(_stakeDefinition);
   static final Abi accelerator = Abi.fromJson(_acceleratorDefinition);
+  static final Abi spork = Abi.fromJson(_sporkDefinition);
+  static final Abi htlc = Abi.fromJson(_htlcDefinition);
   static final Abi common = Abi.fromJson(_commonDefinition);
 }

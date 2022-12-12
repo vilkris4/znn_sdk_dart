@@ -4,25 +4,27 @@ import 'package:sha3/sha3.dart';
 import 'package:znn_sdk_dart/src/model/primitives.dart';
 
 final Address emptyAddress =
-    Address.parse('z1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqsggv2f');
+Address.parse('z1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqsggv2f');
 final Address plasmaAddress =
-    Address.parse('z1qxemdeddedxplasmaxxxxxxxxxxxxxxxxsctrp');
+Address.parse('z1qxemdeddedxplasmaxxxxxxxxxxxxxxxxsctrp');
 final Address pillarAddress =
-    Address.parse('z1qxemdeddedxpyllarxxxxxxxxxxxxxxxsy3fmg');
+Address.parse('z1qxemdeddedxpyllarxxxxxxxxxxxxxxxsy3fmg');
 final Address tokenAddress =
-    Address.parse('z1qxemdeddedxt0kenxxxxxxxxxxxxxxxxh9amk0');
+Address.parse('z1qxemdeddedxt0kenxxxxxxxxxxxxxxxxh9amk0');
 final Address sentinelAddress =
-    Address.parse('z1qxemdeddedxsentynelxxxxxxxxxxxxxwy0r2r');
+Address.parse('z1qxemdeddedxsentynelxxxxxxxxxxxxxwy0r2r');
 final Address swapAddress =
-    Address.parse('z1qxemdeddedxswapxxxxxxxxxxxxxxxxxxl4yww');
+Address.parse('z1qxemdeddedxswapxxxxxxxxxxxxxxxxxxl4yww');
 final Address stakeAddress =
-    Address.parse('z1qxemdeddedxstakexxxxxxxxxxxxxxxxjv8v62');
+Address.parse('z1qxemdeddedxstakexxxxxxxxxxxxxxxxjv8v62');
 final Address sporkAddress =
-    Address.parse('z1qxemdeddedxsp0rkxxxxxxxxxxxxxxxx956u48');
+Address.parse('z1qxemdeddedxsp0rkxxxxxxxxxxxxxxxx956u48');
 final Address acceleratorAddress =
-    Address.parse('z1qxemdeddedxaccelerat0rxxxxxxxxxxp4tk22');
+Address.parse('z1qxemdeddedxaccelerat0rxxxxxxxxxxp4tk22');
+final Address htlcAddress =
+Address.parse('z1qxemdeddedxhtlcxxxxxxxxxxxxxxxxxygecvw');
 final Address bridgeAddress =
-    Address.parse('z1qzlytaqdahg5t02nz5096frflfv7dm3y7yxmg7');
+Address.parse('z1qzlytaqdahg5t02nz5096frflfv7dm3y7yxmg7');
 
 final List<Address> embeddedContractAddresses = [
   plasmaAddress,
@@ -32,6 +34,8 @@ final List<Address> embeddedContractAddresses = [
   swapAddress,
   stakeAddress,
   acceleratorAddress,
+  sporkAddress,
+  htlcAddress,
 ];
 
 class Address {
@@ -76,9 +80,9 @@ class Address {
 
   bool operator ==(Object other) =>
       other is Address &&
-      other.runtimeType == runtimeType &&
-      other.hrp == hrp &&
-      DeepCollectionEquality().equals(other.core, core);
+          other.runtimeType == runtimeType &&
+          other.hrp == hrp &&
+          DeepCollectionEquality().equals(other.core, core);
 
   @override
   int get hashCode => toString().hashCode;
