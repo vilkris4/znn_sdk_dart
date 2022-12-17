@@ -1,29 +1,6 @@
 import 'package:znn_sdk_dart/src/model/primitives.dart';
 import 'dart:convert';
 
-class CreateHtlcParam {
-  Address hashLocked;
-  int expirationTime;
-  int hashType;
-  int keyMaxSize;
-  List<int>? hashLock;
-
-  CreateHtlcParam.fromJson(Map<String, dynamic> json)
-      : hashLocked = Address.parse(json['hashLocked']),
-        expirationTime = int.parse(json['expirationTime']),
-        hashType = int.parse(json['hashType']),
-        keyMaxSize = int.parse(json['keyMaxSize']),
-        hashLock = json['hashLock'];
-
-  Map<String, dynamic> toJson() => {
-    'hashLocked': hashLocked,
-    'expirationTime': expirationTime,
-    'hashType': hashType,
-    'keyMaxSize': keyMaxSize,
-    'hashLock': hashLock
-  };
-}
-
 class HtlcInfo {
   Hash id;
   Address timeLocked;
@@ -73,15 +50,4 @@ class HtlcInfoList {
 
   Map<String, dynamic> toJson() =>
       {'count': count, 'list': list.map((v) => v.toJson()).toList()};
-}
-
-class UnlockHtlcParam {
-  Hash id;
-  List<int>? preimage;
-
-  UnlockHtlcParam.fromJson(Map<String, dynamic> json)
-      : id = Hash.parse(json['id']),
-        preimage = json['preimage'];
-
-  Map<String, dynamic> toJson() => {'id': id, 'preimage': preimage};
 }
