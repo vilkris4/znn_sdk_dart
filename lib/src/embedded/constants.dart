@@ -56,7 +56,7 @@ const int sporkDescriptionMaxLength = 400;
 
 // Htlc
 const int htlcPreimageMinLength = 32;
-const int htlcPreimageMaxLength = 32;
+const int htlcPreimageMaxLength = 255;
 const int htlcTimelockUnitSec = 60 * 60; // 1 hour
 const int htlcTimelockMinSec = htlcTimelockUnitSec * 1; // 1 hour
 const int htlcTimelockMaxSec = htlcTimelockUnitSec * 24 * 30 * 12; // ~1 year
