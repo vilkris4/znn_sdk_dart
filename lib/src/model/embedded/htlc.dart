@@ -24,30 +24,14 @@ class HtlcInfo {
         hashLock = base64.decode(json['hashLock']);
 
   Map<String, dynamic> toJson() => {
-    'id': id,
-    'timeLocked': timeLocked,
-    'hashLocked': hashLocked,
-    'tokenStandard': tokenStandard,
-    'amount': amount,
-    'expirationTime': expirationTime,
-    'hashType': hashType,
-    'keyMaxSize': keyMaxSize,
-    'hashLock': hashLock
-  };
-}
-
-class HtlcInfoList {
-  int count;
-  List<HtlcInfo> list;
-
-  HtlcInfoList({required this.count, required this.list});
-
-  HtlcInfoList.fromJson(Map<String, dynamic> json)
-      : count = json['count'],
-        list = (json['list'] as List)
-            .map((entry) => HtlcInfo.fromJson(entry))
-            .toList();
-
-  Map<String, dynamic> toJson() =>
-      {'count': count, 'list': list.map((v) => v.toJson()).toList()};
+        'id': id,
+        'timeLocked': timeLocked,
+        'hashLocked': hashLocked,
+        'tokenStandard': tokenStandard,
+        'amount': amount,
+        'expirationTime': expirationTime,
+        'hashType': hashType,
+        'keyMaxSize': keyMaxSize,
+        'hashLock': hashLock
+      };
 }
