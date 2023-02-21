@@ -58,3 +58,5 @@ const int sporkDescriptionMaxLength = 400;
 const int htlcPreimageMinLength = 1;
 const int htlcPreimageMaxLength = 255;
 const int htlcPreimageDefaultLength = 32;
+const int htlcHashTypeSha3 = 0;
+const int htlcHashTypeSha256 = 1;
