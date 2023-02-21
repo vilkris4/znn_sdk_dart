@@ -10,7 +10,18 @@ class HtlcInfo {
   int expirationTime;
   int hashType;
   int keyMaxSize;
-  List<int>? hashLock;
+  List<int> hashLock;
+
+  HtlcInfo(
+      {required this.id,
+      required this.timeLocked,
+      required this.hashLocked,
+      required this.tokenStandard,
+      required this.amount,
+      required this.expirationTime,
+      required this.hashType,
+      required this.keyMaxSize,
+      required this.hashLock});
 
   HtlcInfo.fromJson(Map<String, dynamic> json)
       : id = Hash.parse(json['id']),
