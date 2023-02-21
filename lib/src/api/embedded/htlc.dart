@@ -11,15 +11,15 @@ class HtlcApi {
   }
 
   // RPC
-  Future<HtlcInfo> getHtlcInfoById(Hash id) async {
+  Future<HtlcInfo> getById(Hash id) async {
     var response = await client
-        .sendRequest('embedded.htlc.getHtlcInfoById', [id.toString()]);
+        .sendRequest('embedded.htlc.getById', [id.toString()]);
     return HtlcInfo.fromJson(response!);
   }
 
-  Future<bool> getHtlcProxyUnlockStatus(Address address) async {
+  Future<bool> getProxyUnlockStatus(Address address) async {
     return await client.sendRequest(
-        'embedded.htlc.getHtlcProxyUnlockStatus', [address.toString()]);
+        'embedded.htlc.getProxyUnlockStatus', [address.toString()]);
   }
 
   // Contract methods
