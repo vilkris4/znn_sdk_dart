@@ -12,8 +12,8 @@ class HtlcApi {
 
   // RPC
   Future<HtlcInfo> getById(Hash id) async {
-    var response = await client
-        .sendRequest('embedded.htlc.getById', [id.toString()]);
+    var response =
+        await client.sendRequest('embedded.htlc.getById', [id.toString()]);
     return HtlcInfo.fromJson(response!);
   }
 
@@ -43,12 +43,12 @@ class HtlcApi {
         Definitions.htlc.encodeFunction('Unlock', [id.getBytes(), preimage]));
   }
 
-  AccountBlockTemplate denyProxy() {
+  AccountBlockTemplate denyProxyUnlock() {
     return AccountBlockTemplate.callContract(htlcAddress, znnZts, 0,
         Definitions.htlc.encodeFunction('DenyProxyUnlock', []));
   }
 
-  AccountBlockTemplate allowProxy() {
+  AccountBlockTemplate allowProxyUnlock() {
     return AccountBlockTemplate.callContract(htlcAddress, znnZts, 0,
         Definitions.htlc.encodeFunction('AllowProxyUnlock', []));
   }
