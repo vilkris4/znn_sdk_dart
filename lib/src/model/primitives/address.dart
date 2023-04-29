@@ -23,6 +23,10 @@ final Address acceleratorAddress =
     Address.parse('z1qxemdeddedxaccelerat0rxxxxxxxxxxp4tk22');
 final Address htlcAddress =
     Address.parse('z1qxemdeddedxhtlcxxxxxxxxxxxxxxxxxygecvw');
+final Address bridgeAddress =
+    Address.parse('z1qxemdeddedxdrydgexxxxxxxxxxxxxxxmqgr0d');
+final Address liquidityAddress =
+    Address.parse('z1qxemdeddedxlyquydytyxxxxxxxxxxxxflaaae');
 
 final List<Address> embeddedContractAddresses = [
   plasmaAddress,
